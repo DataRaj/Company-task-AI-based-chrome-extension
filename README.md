@@ -2,6 +2,12 @@
 
 This is a [Plasmo extension](https://docs.plasmo.com/) project bootstrapped with command: `pnpm create plasmo --with-tailwindcss`.
 
+This is a chrome extension based task where I built a suggestion based chrome extension.
+
+
+## **Here is Video Demo**
+
+
 ## Getting Started
 
 First, run the development server:
