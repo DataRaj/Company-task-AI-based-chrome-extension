@@ -1,11 +1,12 @@
-import { CountButton } from "~features/CountButton"
+import ButtonComponent from "~features/count-button"
+import LogoVisibleBtn from "~features/logoVisibleBtn"
 
 import "~style.css"
 
 function IndexPopup() {
   return (
     <div className="plasmo-flex plasmo-items-center plasmo-justify-center plasmo-h-16 plasmo-w-40">
-      <CountButton />
+      <ButtonComponent />
     </div>
   )
 }
