@@ -6,6 +6,7 @@ This is a chrome extension based task where I built a suggestion based chrome ex
 
 
 ## **Here is Video Demo**
+[Screencast from 2024-05-03 01-39-54.webm](https://github.com/DataRaj/Company-task-AI-based-chrome-extension/assets/87413639/18e9a434-2022-4579-8c31-dc6c6f01cedd)
 
 
 ## Getting Started
@@ -16,7 +17,7 @@ First, run the development server:
 pnpm dev
 # or
 npm run dev
-```
+``` 
 
 See how to load the extension: https://docs.plasmo.com/framework/workflows/dev#loading-the-extension
 
