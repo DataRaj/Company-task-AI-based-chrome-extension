@@ -1,7 +1,7 @@
 import cssText from "data-text:~style.css"
 import type { PlasmoCSConfig, PlasmoGetInlineAnchor } from "plasmo"
 import { useEffect, useRef, useState } from "react"
-
+import ButtonComponent from "~features/count-button"
 import Fallback from "~features/fallBack"
 import MessagePrompt from "~features/promptMessage"
 import selectMessageBox from "~lib/logoVisibility"
@@ -35,13 +35,13 @@ const PlasmoOverlay = () => {
   const [isRegenerateDisable, setIsRegenerateDisable] = useState<boolean>(false)
 
   // It will show user an icon of chatgpt writer when enters into message box.
-  const handleVisibilityVisible = (newElement: any) => {
-    newElement.style.visibility = "visible"
+  const handleVisibilityVisible = (chatgptWriterment: any) => {
+    chatgptWriterment.style.visibility = "visible"
   }
 
   // the logo will set to hidden when users back out from message box.
-  const handleVisibilityBlur = (newElement: any) => {
-    newElement.style.visibility = "hidden"
+  const handleVisibilityBlur = (chatgptWriter: any) => {
+    chatgptWriter.style.visibility = "hidden"
   }
 
   useEffect(() => {
@@ -60,7 +60,7 @@ const PlasmoOverlay = () => {
       If any element is missing, it logs an error.
   */
 
-      const InsertPromptResult = () => {
+      const InsGeneratedMessage = () => {
         if (lastResponseMessage == null || lastResponseMessage == "") {
           return
         }
@@ -68,8 +68,8 @@ const PlasmoOverlay = () => {
         const pTag = messageBox.querySelector("p") //Select p Tag present in the message box.
         const placeholder = document.querySelector(".msg-form__placeholder") //Select placeholder
         if (messageBox && pTag && placeholder) {
-          placeholder.setAttribute("data-placeholder", "") //Remove placeholder attribute text
-          pTag.textContent = lastResponseMessage //insert last response message into the message box
+          placeholder.setAttribute("data-placeholder", "") //empty the placeholder
+          pTag.textContent = lastResponseMessage // insert newly generated message(lastresponse)
           setIsFallback(false)
         } else {
           console.log(".msg-form__contenteditable not found")
@@ -153,7 +153,7 @@ async function SendMessage(
           setInputMessage={setInputMessage}
           sendMessage={SendMessage}
           isAssistantTyping={isAssistantTyping}
-          InsertPromptResult={InsertPromptResult}
+          InsGeneratedMessage={InsGeneratedMessage}
           isRegenerateDisable={isRegenerateDisable}
         />
       )}
